@@ -1,8 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const boardsRoutes = require('./routes/boards-routes');
-const tasksRoutes = require('./routes/tasks-routes');
+const boardsRoutes = require('./boards-routes');
 const HttpError = require('./models/http-error');
 
 const app = express();
@@ -19,7 +18,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/boards', boardsRoutes);
-app.use('/api/tasks', tasksRoutes);
 app.use((req, res, next) => {
     const error = new HttpError('Could not find this route.', 404);
     throw error;
@@ -27,7 +25,7 @@ app.use((req, res, next) => {
 
 mongoose
     .connect(
-        'mongodb+srv://<username>:<password>@cluster0.zequ0w0.mongodb.net/revive_tasks?retryWrites=true&w=majority'
+        'mongodb+srv://<username>:<password>@cluster0.zequ0w0.mongodb.net/revive_boards?retryWrites=true&w=majority'
     )
     .then(() => {
         app.listen(3001);
