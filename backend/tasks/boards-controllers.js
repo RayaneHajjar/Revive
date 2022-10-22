@@ -51,10 +51,11 @@ const createBoard = async (req, res, next) => {
     );
   }
   //Get the title from the body and the userId from the token
-  const title = req.body.title;
+  const { id, title } = req.body;
   const userId = req.userData.userId;
   //Create a Board object
   const createdBoard = new Board({
+    id,
     title,
     userId,
     cards: []
@@ -95,7 +96,7 @@ const deleteBoard = async (req, res, next) => {
   //Get the board with that boardId
   let board;
   try {
-    board = await Board.findById(boardId);
+    board = await Board.findOne({ id: boardId });
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not delete board.',
@@ -140,11 +141,11 @@ const createCard = async (req, res, next) => {
       );
   }
   //Get the inputs from the body
-  const { title, description, date, labels, tasks, boardId, index } = req.body;
+  const { id, title, description, date, labels, tasks, boardId, index } = req.body;
   //Search for the board of this card
   let board;
   try {
-      board = await Board.findById(boardId);
+      board = await Board.findOne({ id: boardId });
   } catch (err) {
       const error = new HttpError(
           'Creating card failed, please try again.',
@@ -171,11 +172,12 @@ const createCard = async (req, res, next) => {
   //Create the card
   try {
       const result = await Board.updateOne(
-        {"_id" : boardId}, 
+        {"id" : boardId}, 
         { 
           $push : {
             "cards" : { 
               $each : [{
+                id,
                 title,
                 description,
                 date,
@@ -195,8 +197,8 @@ const createCard = async (req, res, next) => {
       );
       return next(error);
   }
-  //Send a message as response
-  res.status(201).json({ message: "Created card." });
+  //Send a meaage as response
+  res.status(201).json({ message: 'The card is added.' });
 };
 
 
@@ -215,8 +217,7 @@ const updateCard = async (req, res, next) => {
   //Search for the board of this card
   let board;
   try {
-      board = await Board.findById(boardId);
-      console.log(board);
+    board = await Board.findOne({ id: boardId });
   } catch (err) {
       const error = new HttpError(
           'Updating card failed, please try again.',
@@ -243,7 +244,7 @@ const updateCard = async (req, res, next) => {
   //Search for the card and update it
   try {
     const result = await Board.updateOne(
-      {"_id" : boardId, "cards._id": cardId}, 
+      {"id" : boardId, "cards.id": cardId}, 
       { 
         $set: { "cards.$.title": title, "cards.$.description": description, "cards.$.date": date, "cards.$.labels": labels, "cards.$.tasks": tasks }
       }
@@ -269,7 +270,7 @@ const deleteCard = async (req, res, next) => {
   //Search for the board
   let board;
   try {
-      board = await Board.findById(boardId);
+    board = await Board.findOne({ id: boardId });
   } catch (err) {
       const error = new HttpError(
           'Deleting card failed, please try again.',
@@ -296,10 +297,10 @@ const deleteCard = async (req, res, next) => {
   //Serach for the card and delete it
   try {
     const result = await Board.updateOne(
-      {"_id" : boardId}, 
+      {"id" : boardId}, 
       { 
         $pull : {
-          "cards" : {"_id": cardId}
+          "cards" : {"id": cardId}
         }
       }
     );

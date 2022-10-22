@@ -13,6 +13,9 @@ router.use(checkAuth);
 router.post(
   '/',
   [
+    check('id')
+      .not()
+      .isEmpty(),
     check('title')
       .not()
       .isEmpty(),
@@ -25,6 +28,9 @@ router.delete('/:bid', boardsControllers.deleteBoard);
 router.post(
   '/card',
   [
+    check('id')
+      .not()
+      .isEmpty(),
     check('title')
       .not()
       .isEmpty(),
