@@ -7,10 +7,6 @@ module.exports = {
                 white: '#ffffff',
                 brown: '#7e685a',
                 green: '#afd275',
-                darkbrown: '#594622',
-                bronze: '#A68C5D',
-                deer: '#BF7960',
-                deeptaupe: '#735F5D',
             },
             backgroundImage: {
                 nature: "url('home/assets/Wallpaper.png')",
@@ -22,6 +18,7 @@ module.exports = {
                 'noto': ["'Noto Sans Buhid'", 'sans-serif']
             },
             spacing: {
+                "90": "23rem",
 				"10vh": "10vh",
                 "15vh": "15vh",
 				"20vh": "20vh",
@@ -33,7 +30,7 @@ module.exports = {
 				"70vh": "70vh",
 				"80vh": "80vh",
 				"90vh": "90vh",
-                "93vh": "93vh",
+                "92vh": "92vh",
 				"100vh": "100vh",
                 "10vw": "10vw",
                 "15vw": "15vw",
