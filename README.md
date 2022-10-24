@@ -8,16 +8,16 @@ _Just being surrounded by an organized environment, revive our souls and inspire
 Revive is a microservices based application.  
 The frontend was written with React JS using Tailwind for CSS.  
 The backend is composed from 3 microservies:  
-- The quotes microservice is coded in Python using the Django framework.  
-- The users microservice is coded in NodeJs using the ExpressJs framework.  
-- The tasks microservice is also coded in NodeJs using the ExpressJs framework.  
+The quotes microservice is coded in Python using the Django framework.  
+The users microservice is coded in NodeJs using the ExpressJs framework.  
+The tasks microservice is also coded in NodeJs using the ExpressJs framework.  
   
 ## How to run the application?
 First, you need to create a cluster in MongoDB Atlas to host our databases.  
 Then, add your username and password in the following files:  
-- backend -> quotesProject -> manage.py  
-- backend -> users -> server.js  
-- backend -> tasks -> server.js  
+backend -> quotesProject -> manage.py  
+backend -> users -> server.js  
+backend -> tasks -> server.js  
 **Now we have to install the requirements for our backend apis:**  
 Inside backend/quotesProject we run the following command:  
 `pip install -r requirements.txt`  
