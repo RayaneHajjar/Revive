@@ -3,7 +3,18 @@ _Just being surrounded by an organized environment, revive our souls and inspire
 **Revive** is a web application created to manage the tasks cycle of employees, students or any person who want to change his life and to be more productive.  
   
 ## Overview
-  
+![Screenshot (99)](https://user-images.githubusercontent.com/75786591/197496414-24eb0ae2-1cab-43ae-bf7f-771faa189e20.png)
+![Screenshot (114)](https://user-images.githubusercontent.com/75786591/197496688-ceb98553-6149-45cf-81ee-61966ff5a975.png)
+![Screenshot (100)](https://user-images.githubusercontent.com/75786591/197496736-14847896-72ef-4ce5-b390-6c4b633f464b.png)
+![Screenshot (101)](https://user-images.githubusercontent.com/75786591/197496754-d4d9b182-d46f-4161-a445-a5bc097dac90.png)
+![Screenshot (106)](https://user-images.githubusercontent.com/75786591/197496942-33fd1054-2932-4ce4-a694-d820e0e3030a.png)
+![Screenshot (107)](https://user-images.githubusercontent.com/75786591/197497143-28b1e186-6fdf-41a5-bddd-33ebb3324cce.png)
+![Screenshot (108)](https://user-images.githubusercontent.com/75786591/197497167-f2e0bfe7-96cf-4069-a1ce-9d88ddebfc6a.png)
+![Screenshot (110)](https://user-images.githubusercontent.com/75786591/197497275-d3ffc2b8-4351-4f61-b3fa-c852b7ce3fe9.png)
+![Screenshot (111)](https://user-images.githubusercontent.com/75786591/197497361-48a7847b-0a4f-49ca-bdd1-a3a72f74ea3e.png)
+![Screenshot (112)](https://user-images.githubusercontent.com/75786591/197497449-e5f23d83-e0c7-4374-a622-d44b760e28b6.png)
+![Screenshot (113)](https://user-images.githubusercontent.com/75786591/197497462-e75e8409-411b-4da3-85bc-a0b1faee3de3.png)
+
 ## How Revive was built?
 Revive is a microservices based application.  
 The frontend was written with React JS using Tailwind for CSS.  
